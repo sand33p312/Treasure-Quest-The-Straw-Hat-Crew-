@@ -22,7 +22,5 @@ class CrewMate:
         self.Treasury=[]
         self.time_added=[]
         self.current_load=0
-        self.min_priority_treasure=None
-        self.min_priority_node=None # special
     
     # Add more methods if required

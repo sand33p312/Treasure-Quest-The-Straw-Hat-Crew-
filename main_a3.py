@@ -1,4 +1,4 @@
-from heap import Heap
+import heap
 import straw_hat
 import treasure
 import sys
@@ -42,15 +42,9 @@ class ParserTreasure(Parser):
                 except:
                     print(f"Cannot add treasure {id} to treasury")
             elif query_type == 'Get':
-                processed = treasury.get_completion_time()
-                l=[(treasure_obj.id, treasure_obj.completion_time) for treasure_obj in processed]
-                l.sort()
-                print('Completion Time:', l)
                 # try:
-                #     processed = treasury.get_completion_time()
-                #     l=[(treasure_obj.id, treasure_obj.completion_time) for treasure_obj in processed]
-                #     l.sort()
-                #     print('Completion Time:', l)
+                processed = treasury.get_completion_time()
+                print('Completion Time:', [(treasure_obj.id, treasure_obj.completion_time) for treasure_obj in processed])
                 # except:
                 #     print('Cannot get completion time')
             else:
@@ -62,7 +56,7 @@ class ParserHeap(Parser):
         self.comp = comparison
     
     def parse(self):
-        h = Heap(self.comp, [])
+        h = heap.Heap(self.comp, [])
         num = 0
         for i in range(len(self.data)):
             query = self.data[i].split()
@@ -111,7 +105,7 @@ if __name__ == '__main__':
     parser.parse()
     print()
 
-    print("----------my_test_case----------")
+    print("----------my_test_case.txt----------")
     parser = ParserTreasure('my_test_case.txt')
     parser.parse()
     print()
