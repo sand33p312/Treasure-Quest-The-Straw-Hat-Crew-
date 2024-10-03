@@ -28,7 +28,7 @@ class Heap:
         
         # Write your code here
         self.init_array=init_array
-        # self.comparison_function=comparison_function
+        self.comparison_function=comparison_function
         
     def insert(self, value):
         '''

@@ -22,5 +22,6 @@ class CrewMate:
         self.Treasury=[]
         self.time_added=[]
         self.current_load=0
+        self.contain_treasure=0
     
     # Add more methods if required

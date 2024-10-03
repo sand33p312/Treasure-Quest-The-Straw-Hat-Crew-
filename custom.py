@@ -40,7 +40,7 @@ class Heap_2:
         # Write your code here
         self.init_array=init_array
         self.comparison_function=comparison_function
-        self.all_time_list=[]
+        self.crewmates_contain_load=[]
         
     def insert(self, value):
         '''
@@ -112,7 +112,7 @@ class Heap_2:
         return self._right(j)<len(self.init_array)
     
     def _swap(self,i,j):
-        self.init_array[i],self.init_array[j]=self.init_array[j],self.init_array[i]
+        self.init_array[i],self.init_array[j] = self.init_array[j],self.init_array[i]
     
     def _upheap(self,j):
         parent=self._parent(j)
@@ -120,38 +120,33 @@ class Heap_2:
         if self.comparison_function==0:
             current_crewmate=self.init_array[j]
             parent_crewmate=self.init_array[parent]
-            if j>0 and parent_crewmate.current_load>current_crewmate.current_load:
+            if j>0 and parent_crewmate.current_load > current_crewmate.current_load:
                 self._swap(j,parent)
                 self._upheap(parent)
         else:
-            # print('________hi_______')
             current_node=self.init_array[j]
-            # current_treasure.initialize()
             parent_node=self.init_array[parent]
-            # parent_treasure.initialize()
 
             if j>0 and parent_node.priority>current_node.priority:
                 self._swap(j,parent)
                 self._upheap(parent)
             elif j>0 and parent_node.priority==current_node.priority:
-                if parent_node.treasure.id>current_node.treasure.id:
+                if parent_node.treasure.id > current_node.treasure.id:
                     self._swap(j,parent)
                     self._upheap(parent) 
-            # print('kaam ho gaya')    
-                
-
+                    
     def _downheap(self,j):
         if self.comparison_function==0:
-            current_crewmate=self.init_array[j]
+            current_crewmate = self.init_array[j]
             if self._has_left(j):
                 left=self._left(j)
                 small_child=left
                 if self._has_right(j):
                     right=self._right(j)
-                    if self.init_array[right]<self.init_array[left]:
+                    if self.init_array[right].current_load < self.init_array[left].current_load:
                         small_child=right
                 small_child_crewmate=self.init_array[small_child]
-                if current_crewmate.current_load>small_child_crewmate.current_load:
+                if current_crewmate.current_load > small_child_crewmate.current_load:
                     self._swap(j,small_child)
                     self._downheap(small_child)
         else:
@@ -161,8 +156,11 @@ class Heap_2:
                 small_child=left
                 if self._has_right(j):
                     right=self._right(j)
-                    if self.init_array[right] < self.init_array[left]:
+                    if self.init_array[right].priority < self.init_array[left].priority:
                         small_child=right
+                    elif self.init_array[right].priority == self.init_array[left].priority:
+                        if self.init_array[right].treasure.id < self.init_array[left].treasure.id:
+                            small_child = right
                 small_child_node = self.init_array[small_child]
                 if current_node.priority > small_child_node.priority:
                     self._swap(j,small_child)

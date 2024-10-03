@@ -1,11 +1,305 @@
-2
-Add 10 10 1
+10
+Add 1 8 1
 Get
-Add 11 20 3
+Add 2 7 2
 Get
-Add 12 10 4
+Add 3 4 3
 Get
-Add 13 5 6
+Add 4 1 4
 Get
-Add 14 12 7
+Add 5 6 5
+Get
+Add 6 5 6
+Get
+Add 7 7 7
+Get
+Add 8 3 8
+Get
+Add 9 4 9
+Get
+Add 10 2 10
+Get
+Add 11 9 11
+Get
+Add 12 3 12
+Get
+Add 13 5 13
+Get
+Add 14 8 14
+Get
+Add 15 7 15
+Get
+Add 16 2 16
+Get
+Add 17 9 17
+Get
+Add 18 1 18
+Get
+Add 19 6 19
+Get
+Add 20 4 20
+Get
+Add 21 8 21
+Get
+Add 22 7 22
+Get
+Add 23 4 23
+Get
+Add 24 1 24
+Get
+Add 25 6 25
+Get
+Add 26 5 26
+Get
+Add 27 7 27
+Get
+Add 28 3 28
+Get
+Add 29 4 29
+Get
+Add 30 2 30
+Get
+Add 31 9 31
+Get
+Add 32 3 32
+Get
+Add 33 5 33
+Get
+Add 34 8 34
+Get
+Add 35 7 35
+Get
+Add 36 2 36
+Get
+Add 37 9 37
+Get
+Add 38 1 38
+Get
+Add 39 6 39
+Get
+Add 40 4 40
+Get
+Add 41 8 41
+Get
+Add 42 7 42
+Get
+Add 43 4 43
+Get
+Add 44 1 44
+Get
+Add 45 6 45
+Get
+Add 46 5 46
+Get
+Add 47 7 47
+Get
+Add 48 3 48
+Get
+Add 49 4 49
+Get
+Add 50 2 50
+Get
+Add 51 9 51
+Get
+Add 52 3 52
+Get
+Add 53 5 53
+Get
+Add 54 8 54
+Get
+Add 55 7 55
+Get
+Add 56 2 56
+Get
+Add 57 9 57
+Get
+Add 58 1 58
+Get
+Add 59 6 59
+Get
+Add 60 4 60
+Get
+Add 61 8 61
+Get
+Add 62 7 62
+Get
+Add 63 4 63
+Get
+Add 64 1 64
+Get
+Add 65 6 65
+Get
+Add 66 5 66
+Get
+Add 67 7 67
+Get
+Add 68 3 68
+Get
+Add 69 4 69
+Get
+Add 70 2 70
+Get
+Add 71 9 71
+Get
+Add 72 3 72
+Get
+Add 73 5 73
+Get
+Add 74 8 74
+Get
+Add 75 7 75
+Get
+Add 76 2 76
+Get
+Add 77 9 77
+Get
+Add 78 1 78
+Get
+Add 79 6 79
+Get
+Add 80 4 80
+Get
+Add 81 8 81
+Get
+Add 82 7 82
+Get
+Add 83 4 83
+Get
+Add 84 1 84
+Get
+Add 85 6 85
+Get
+Add 86 5 86
+Get
+Add 87 7 87
+Get
+Add 88 3 88
+Get
+Add 89 4 89
+Get
+Add 90 2 90
+Get
+Add 91 9 91
+Get
+Add 92 3 92
+Get
+Add 93 5 93
+Get
+Add 94 8 94
+Get
+Add 95 7 95
+Get
+Add 96 2 96
+Get
+Add 97 9 97
+Get
+Add 98 1 98
+Get
+Add 99 6 99
+Get
+Add 100 4 100
+Get
+Add 101 8 101
+Get
+Add 102 7 102
+Get
+Add 103 4 103
+Get
+Add 104 1 104
+Get
+Add 105 6 105
+Get
+Add 106 5 106
+Get
+Add 107 7 107
+Get
+Add 108 3 108
+Get
+Add 109 4 109
+Get
+Add 110 2 110
+Get
+Add 111 9 111
+Get
+Add 112 3 112
+Get
+Add 113 5 113
+Get
+Add 114 8 114
+Get
+Add 115 7 115
+Get
+Add 116 2 116
+Get
+Add 117 9 117
+Get
+Add 118 1 118
+Get
+Add 119 6 119
+Get
+Add 120 4 120
+Get
+Add 121 8 121
+Get
+Add 122 7 122
+Get
+Add 123 4 123
+Get
+Add 124 1 124
+Get
+Add 125 6 125
+Get
+Add 126 5 126
+Get
+Add 127 7 127
+Get
+Add 128 3 128
+Get
+Add 129 4 129
+Get
+Add 130 2 130
+Get
+Add 131 9 131
+Get
+Add 132 3 132
+Get
+Add 133 5 133
+Get
+Add 134 8 134
+Get
+Add 135 7 135
+Get
+Add 136 2 136
+Get
+Add 137 9 137
+Get
+Add 138 1 138
+Get
+Add 139 6 139
+Get
+Add 140 4 140
+Get
+Add 141 8 141
+Get
+Add 142 7 142
+Get
+Add 143 4 143
+Get
+Add 144 1 144
+Get
+Add 145 6 145
+Get
+Add 146 5 146
+Get
+Add 147 7 147
+Get
+Add 148 3 148
+Get
+Add 149 4 149
+Get
+Add 150 2 150
+Get
+Add 999 5 999
+Get
+Add 1000 6 1000
 Get

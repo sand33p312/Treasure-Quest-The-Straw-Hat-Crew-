@@ -25,7 +25,6 @@ class StrawHatTreasury:
         
         # Write your code here
         self.crew=Heap_2(0,[])
-        # treasure_heap=Heap(None,[])
         for i in range(m):
             new_crewmate=CrewMate()
             self.crew.insert(new_crewmate)
@@ -49,6 +48,9 @@ class StrawHatTreasury:
         min_load_crewmate.Treasury.append(treasure)
         min_load_crewmate.time_added.append(treasure.arrival_time)
         self.crew.extract()
+        if min_load_crewmate.contain_treasure==0:
+            self.crew.crewmates_contain_load.append(min_load_crewmate)
+            min_load_crewmate.contain_treasure=1
 
         if min_load_crewmate.current_load > treasure.arrival_time:
             min_load_crewmate.current_load += treasure.size
@@ -76,19 +78,20 @@ class StrawHatTreasury:
         
         completion_time_list=[]
 
-        for crew_mate in self.crew.init_array:
+        for crew_mate in self.crew.crewmates_contain_load:
             if len(crew_mate.Treasury)!=0:
-                treasure_heap = Heap_2(1,[])
+                treasure_heap = Heap_2(1,[]) # making heap for priority of node of treasure
                 arrival_times = crew_mate.time_added # list of arrival_times when treasure added.
                 treasures = crew_mate.Treasury # list of treasures.
                 current_time = arrival_times[0] # store first treasure arrival time.
                 min_p_node = None
-                # print(arrival_times)
 
                 for i in range(len(treasures)):
 
                     priority=arrival_times[i] + treasures[i].size # priority of ith treasure at arrival time
                     treasure_node = Node(priority,treasures[i]) # make node 
+
+                    attempt_insert = False
 
                     if min_p_node is None:
                         min_p_node = treasure_node
@@ -98,8 +101,8 @@ class StrawHatTreasury:
                     
                         while(time_spent!=0 and len(treasure_heap.init_array)):    
                             if time_spent < min_p_node.remaining_size:
-                                current_time+=time_spent
-                                # print(current_time)
+                                current_time += time_spent
+                                
                                 min_p_node.priority-=time_spent
                                 min_p_node.remaining_size-=time_spent
                                 if min_p_node.priority > treasure_node.priority:
@@ -111,13 +114,14 @@ class StrawHatTreasury:
                                 time_spent=0 # update time_spent
 
                             elif time_spent == min_p_node.remaining_size:
-                                current_time+=time_spent
+                                current_time += time_spent
                                 min_p_node.remaining_size-=time_spent 
                                 min_p_node.treasure.completion_time = current_time
                                 completion_time_list.append((min_p_node.treasure)) # update completion time list
+
                                 treasure_heap.extract()
-                                if len(treasure_heap.init_array)!=0:
-                                    min_p_node = treasure_heap.init_array[0]
+
+                                min_p_node = treasure_heap.top()
                                 
                                 time_spent=0 # update time_stemp
 
@@ -127,13 +131,25 @@ class StrawHatTreasury:
                                 min_p_node.remaining_size=0 #  set remaining size of this node to zero
                                 min_p_node.treasure.completion_time = current_time
                                 completion_time_list.append((min_p_node.treasure)) # update completion time list
-                                treasure_heap.extract()
-                                if len(treasure_heap.init_array)!=0:
-                                    min_p_node = treasure_heap.init_array[0]
 
-                    treasure_heap.insert(treasure_node) # insert treasure_node to treasure_heap assign above
+                                treasure_heap.extract()
+
+                                if current_time < arrival_times[i] and len(treasure_heap.init_array)==0:
+                                    current_time = arrival_times[i]
+
+                                min_p_node = treasure_heap.top()
+                                
+                                    
+                    if attempt_insert == False:
+                        attempt_insert=True
+                        if min_p_node is None:
+                            min_p_node=treasure_node
+                        treasure_heap.insert(treasure_node) # insert treasure_node to treasure_heap assign above
+
                 
                 while(len(treasure_heap.init_array)!=0):
+                    if min_p_node is None:
+                        min_p_node = treasure_heap.init_array[0]
                     current_time+=min_p_node.remaining_size
                     min_p_node.treasure.completion_time = current_time
                     completion_time_list.append((min_p_node.treasure)) # update completion time list
